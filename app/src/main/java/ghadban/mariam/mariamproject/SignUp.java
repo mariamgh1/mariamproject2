@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class SignUp extends AppCompatActivity {
-    private EditText etFirstName, etLastName, etPassword, etVrPassword, etEmail, etPhone;
+    private EditText etFirstName, etLastName, etPassword, etVerPassword, etEmail, etPhone;
     private Button Savebtn;
 
     @Override
@@ -18,7 +18,7 @@ public class SignUp extends AppCompatActivity {
         etFirstName = findViewById(R.id.etFirstName);
         etLastName = findViewById(R.id.etLastName);
         etPassword = findViewById(R.id.etPassword);
-        etVrPassword = findViewById(R.id.etVrPassword);
+        etVerPassword = findViewById(R.id.etVerPassword);
         etEmail = findViewById(R.id.etEmail);
         etPhone = findViewById(R.id.etPhone);
         Savebtn = findViewById(R.id.Savebtn);
@@ -29,7 +29,7 @@ public class SignUp extends AppCompatActivity {
         String firstn = etFirstName.getText().toString();
         String lastn = etLastName.getText().toString();
         String pass = etPassword.getText().toString();
-        String verPass = etVrPassword.getText().toString();
+        String verPass = etVerPassword.getText().toString();
         String email = etEmail.getText().toString();
         String phone = etPhone.getText().toString();
         String save = Savebtn.getText().toString();
