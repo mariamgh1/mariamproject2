@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "149384440278",
+    "firebase_url": "https://mariamproject-f666b.firebaseio.com",
+    "project_id": "mariamproject-f666b",
+    "storage_bucket": "mariamproject-f666b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149384440278:android:67697b54bda5e6bf82dc77",
+        "android_client_info": {
+          "package_name": "ghadban.mariam.mariamproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "149384440278-attb9fceefd4equi8crk69tfack5dkjo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ghadban.mariam.mariamproject",
+            "certificate_hash": "801b381770c9579a70034b40ac759efe67e12304"
+          }
+        },
+        {
+          "client_id": "149384440278-rtd93sju540m05s9uioj3cuth3032hqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBszMwOlsGFUy7q_cXObMBLoGftMMTB6ks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "149384440278-rtd93sju540m05s9uioj3cuth3032hqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
