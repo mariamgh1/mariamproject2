@@ -1,10 +1,12 @@
-package ghadban.mariam.mariamproject;
+package ghadban.mariam.mariamproject.MyUl;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import ghadban.mariam.mariamproject.R;
 
 public class SignIn extends AppCompatActivity {
 
