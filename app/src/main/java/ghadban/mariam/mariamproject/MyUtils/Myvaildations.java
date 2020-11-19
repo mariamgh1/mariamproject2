@@ -5,12 +5,12 @@ import java.util.regex.Pattern;
 /**
  * מחלקה שבודקת תקינות שדות כמו אימיל וסיסמא ועוד
  */
-class MyValidations
+public class Myvaildations
 {
     private Pattern pattern;
     private Matcher matcher;
     private static final String PASSWORD_PATTERN = "((?=.*[a-z])(?=.*\\d)(?=.*[A-Z])(?=.*[@#$%!]).{8,40})";
-    public MyValidations() {
+    public Myvaildations() {
         pattern = Pattern.compile(PASSWORD_PATTERN);
     }
 
@@ -22,4 +22,3 @@ class MyValidations
     }
 
 }
-
