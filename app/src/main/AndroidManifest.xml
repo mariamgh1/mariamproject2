@@ -10,16 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MyUl.AddTaskyActivity"></activity>
-        <activity android:name=".MyUl.SignIn" />
-        <activity android:name=".MyUl.SignUp" />
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MyUl.SignIn" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MyUl.SignUp" />
+
         <activity android:name=".MyUl.MainActivity">
 
-        </activity>
+       </activity>
     </application>
 
 </manifest>
