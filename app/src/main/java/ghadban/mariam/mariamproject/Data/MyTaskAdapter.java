@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -53,7 +54,7 @@ public class MyTaskAdapter extends ArrayAdapter<MyTask>
         ImageButton btnCall=v.findViewById(R.id.itmbtnCall);
         ImageButton btnEdit=v.findViewById(R.id.itmbtnEdit);
         //3.3 get the soutable task object
-        MyTask task = getItem(position);
+        final MyTask task = getItem(position);
         //3.4 connect the dat to the view (view the data using item views)
         tvTitle.setText(task.getTitle());
         tvSubject.setText(task.getSubject());
@@ -73,6 +74,13 @@ public class MyTaskAdapter extends ArrayAdapter<MyTask>
             case 2: tvImportant.setBackgroundResource(Color.MAGENTA);break;
             case 1: tvImportant.setBackgroundResource(Color.rgb(0,200,0));break;
         }
+        //3.5
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), task.getTitle());
+            }
+        });
         return v;
     }
 }

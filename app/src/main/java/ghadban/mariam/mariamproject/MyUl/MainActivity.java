@@ -1,5 +1,6 @@
 package ghadban.mariam.mariamproject.MyUl;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -8,10 +9,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import ghadban.mariam.mariamproject.Data.MyTask;
 import ghadban.mariam.mariamproject.Data.MyTaskAdapter;
@@ -43,9 +48,12 @@ public class MainActivity extends AppCompatActivity {
         taskAdapter=new MyTaskAdapter(getBaseContext(),R.layout.item_task_view);
         //a.5 connect listview to the adapter
         lstTasks.setAdapter(taskAdapter);
+        //a.7
+        downloadFromFireBase();
     }
 //a.6
-    public void downloadFromFireBase(){
+    public void downloadFromFireBase()
+    {
         // where we saved before we need to connect to down load
         //1.
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -55,6 +63,21 @@ public class MainActivity extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         String uid = auth.getCurrentUser().getUid();
         //4. My object Key
-        reference.child("AllTasks").child(uid);
+        reference.child("AllTasks").child(uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                taskAdapter.clear();
+                for (DataSnapshot child : dataSnapshot.getChildren())
+                {
+                   MyTask task = child.getValue(MyTask.class);
+                   taskAdapter.add(task);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(MainActivity.this,"Download Error",Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 }

@@ -105,6 +105,6 @@ public class SignUp extends AppCompatActivity {
                     }
             }
         };
-       auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener( listener);
+       auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(listener);
     }
 }
